@@ -3,15 +3,17 @@
     <p><%= notice %></p>
     <h1>ツイート一覧</h1>
       <%= link_to "ツイートを作成する", new_tweet_path, class: 'btn btn-default' %>
-    <% @tweets.each do |tweet| %>
-    <div class="row">
-      <h4><strong><%= tweet.content %></strong></h4>
-      <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    <div class="container">
+      <% @tweets.each do |tweet| %>
+      <div class="row">
+        <h4><strong><%= tweet.content %></strong></h4>
+        <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+      </div>
+      <% end %>
+      <div id="page-top-btn2" class="page-top-btn2">
+          <p><a class="move-page-top" id="move-page-top">▲</a></p>
+      </div>
     </div>
-    <div id="page-top-btn2" class="page-top-btn2">
-        <p><a class="move-page-top" id="move-page-top">▲</a></p>
-    </div>
-    <% end %>
   </div>
 </div>
