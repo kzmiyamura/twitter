@@ -45,7 +45,8 @@ input[type="submit"].btn-block{
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header {
   width: 100%;
-  background-color: #2c3e50;
+//  background-color: #2c3e50;
+  background-color: #FFF;
 //  height: 54px;
 }
 
@@ -60,32 +61,53 @@ header {
 
 .navbar-default {
   .navbar-brand {
-    color: #ccc;
-    &:hover {
-      color: white;
+    /*リンクされた文字*/
+    color:#ccc;
+    font-style:normal;
+    //text-decoration:underline;
+    &:link {/*未訪問のリンク*/
+        color:#ccc;
+        font-style:normal;
+        //text-decoration:underline;
+    }
+    &:visited {/*訪問後のリンク*/
+        color:#ccc;
+        //text-decoration:underline;
+    }
+    &:hover {/*マウスをのせたとき*/
+        color:#00F;
+        font-style:normal;
+        text-decoration:underline;
+    }
+    &:active {/*クリック中*/
+        text-decoration:none;
     }
   }
   .navbar-nav > li > a {
     color: #ccc;
-    &:hover, &:focus {
-      color: white;
+//    &:hover, &:focus {
+    &:hover {
+      color: #00F;
     }
   }
+  
   .navbar-nav > .open > a {
     background-color: transparent;
-    color: white;
-    &:hover, &:focus {
+    color: #ccc;
+//    &:hover, &:focus {
+    &:hover {
       background-color: transparent;
-      color: white;
+      color: #00F;
     }
   }
 }
+
 @media (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ccc;
     text-align: center;
     &:hover, &:focus {
-      color: white;
+      color: #00F;
     }
   }
   .navbar-default .navbar-toggle {
